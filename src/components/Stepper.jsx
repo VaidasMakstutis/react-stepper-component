@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Stepper = ({ currentStep, numberOfSteps }) => {
   const activeColor = index => (currentStep >= index ? "bg-green-500" : "bg-rose-200");
@@ -14,6 +15,11 @@ const Stepper = ({ currentStep, numberOfSteps }) => {
       ))}
     </div>
   );
+};
+
+Stepper.propTypes = {
+  currentStep: PropTypes.number.isRequired,
+  numberOfSteps: PropTypes.number.isRequired
 };
 
 export default Stepper;
